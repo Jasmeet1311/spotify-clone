@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  background-color: black;
+  color: white;
+}
+.container {
+  /* display: flex; */
+  gap: 0.2rem;
+}
+.left-section {
+  width: 38vw;
+  height: 97vh;
+}
+.left-section .top {
+  background-color: #121212;
+  border-radius: 1rem;
+  margin: 0.3em;
+}
+.left-section .bottom {
+  background-color: #121212;
+  border-radius: 1rem;
+  /* height: 76vh; */
+  margin: 0.4em;
+}
+.right-section {
+  background-color: #121212;
+  width: 80vw;
+  border-radius: 1rem;
+  margin-top: 0.3em;
+  margin-right: 0.3em;
+  margin-bottom: 3.2em;
+}
+.home {
+  padding: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.home ul li {
+  gap: 1rem;
+  width: 1.3rem;
+  margin-left: 1rem;
+}
+.home ul li a {
+  text-decoration: none;
+  color: white;
+}
+.home ul li a:hover {
+  text-decoration: underline;
+}
+.library img{
+  width: 17px;
+}
+.heading{
+  gap: .5rem;
+  margin:.7rem 1rem;
+  color:rgb(179, 179, 179)
+}
+.icons{
+  margin: 0.4rem 2px;
+  gap: .8rem;
+}
+.nav{
+  justify-content: space-between;
+}
+.arrow img{
+  background-color: white;
+  border-radius: 4rem;
+  padding: .4rem;
+}
+.cardContainer{
+  gap: 3px;
+  flex-wrap: wrap;
+  max-height: 63vh;
+  overflow-y: scroll;
+  
+}
+.card{
+  position: relative;
+  padding: 10px;
+  width: 150px;
+  border-radius: .5rem;
+  margin-top: 11px;
+  margin-left: 8px;
+}
+.play{
+  position: absolute;
+  top: 108px;
+  left: 107px;
+}
+.card:hover{
+  background-color: #2a2a2a;
+}
+.card img{
+  width: 100%;
+  object-fit: contain;
+  border-radius: .5rem;
+}
+.card p{
+  color: rgb(103, 101, 101);
+}
+.signup-btn{
+  background-color: #121212;
+  color: rgb(186, 183, 183);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  padding: 10px 19px;
+  
+}
+.signup-btn:hover{
+  color: white;
+}
+.login-btn{
+  background-color: white;
+  border-radius: 1rem;
+  padding: 10px 25px;
+  font-size: 16px;
+  border: none;
+  font-weight: bold;
+  color: #3d3d3d;
+}
+
+.login-btn:hover{
+  color: black;
+}
+
+  
