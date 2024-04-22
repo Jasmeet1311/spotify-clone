@@ -25,7 +25,7 @@ function playMusic(music,pause=false){
     // let audio = new Audio("/songs/"+music);          
     // currentSong.play(music);
     document.querySelector(".song-info").innerHTML = decodeURI(music);
-    document.querySelector(".song-time").innerHTML ="00:00";
+    document.querySelector(".song-time").innerHTML ="00:00/00:00";
     
   
 }
@@ -90,19 +90,29 @@ async function main() {
     // Listen for time update event
       currentSong.addEventListener("timeupdate",()=>{
       // console.log(secondsToMinutesSeconds(currentSong.currentTime),secondsToMinutesSeconds(currentSong.duration));
-      document.querySelector(".song-time").innerHTML =  `${secondsToMinutesSeconds(currentSong.currentTime)}`;
-      document.getElementById("total-time").innerHTML =`${secondsToMinutesSeconds(currentSong.duration)}`;  
+      document.querySelector(".song-time").innerHTML =  `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`;
+      // document.querySelector(".song-time").innerHTML =`${secondsToMinutesSeconds(currentSong.duration)}`;  
       document.querySelector(".circle").style.left = (currentSong.currentTime/ currentSong.duration) * 100 + "%";
     })
 
   // Add an event listenser to seekbar
   document.querySelector(".seekbar").addEventListener("click",(e)=>{
     let percent = e.offsetX/e.target.getBoundingClientRect().width * 100;
-    console.log(e.offsetX, e.target.getBoundingClientRect());
+    // console.log(e.offsetX, e.target.getBoundingClientRect());
     document.querySelector(".circle").style.left = (percent)+ "%";
     currentSong.currentTime = ((currentSong.duration)*percent) /100;
     
     
+  })
+
+  //Add an event listener for hamburger
+  document.querySelector(".hamburger").addEventListener("click",()=>{
+    document.querySelector(".left-section").style.left ="0";
+  })
+  // Add an event listener for close button
+  document.querySelector(".close").addEventListener("click",()=>{
+    console.log("clicked");
+    document.querySelector(".left-section").style.left ="-200%";
   })
 }
 main();
