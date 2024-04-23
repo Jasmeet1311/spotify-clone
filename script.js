@@ -1,4 +1,5 @@
 let currentSong = new Audio();
+let songs;
 async function getSongs() {
   let songs = await fetch("http://127.0.0.1:5500/songs/");
   let response = await songs.text(); // html document
@@ -33,6 +34,9 @@ function secondsToMinutesSeconds(seconds) {
   // Calculate minutes and remaining seconds
   var minutes = Math.floor(seconds / 60);
   var remainingSeconds = Math.floor(seconds % 60);
+  if (isNaN(seconds) || seconds <0) {
+     return "00:00";
+  }
   
   // Format minutes and seconds with leading zeros if necessary
   var formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
@@ -44,7 +48,7 @@ function secondsToMinutesSeconds(seconds) {
 
 async function main() {
   
-  let songs = await getSongs();
+  songs = await getSongs();
   playMusic(songs[0], true);  
   // console.log(songs);
   let songUL = document.getElementsByTagName("ol")[0];
@@ -113,6 +117,22 @@ async function main() {
   document.querySelector(".close").addEventListener("click",()=>{
     console.log("clicked");
     document.querySelector(".left-section").style.left ="-200%";
+  })
+  // Add an event Listener to previous and next
+  document.getElementById("previous").addEventListener("click",()=>{
+    let s = currentSong.src.split("/")[4];
+    let index = songs.indexOf(s);
+    if ((index-1)>=0) {
+      playMusic(songs[index-1]);  
+    }
+  })
+  document.getElementById("next").addEventListener("click",()=>{
+    let s = currentSong.src.split("/")[4];
+    let index = songs.indexOf(s);
+    if ((index+1)<songs.length) {
+      playMusic(songs[index+1]);  
+    }
+
   })
 }
 main();

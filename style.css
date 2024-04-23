@@ -31,7 +31,7 @@ body {
   /* height: 76vh; */
   margin: 0.4em;
   height: 71vh;
-  overflow: scroll;
+  overflow: auto;
   
 }
 .right-section {
@@ -140,7 +140,7 @@ body {
   width: 96%;
   background-color: rgb(10, 10, 10);
   padding-left: 1.2rem;
-  padding-top: 1.2rem;
+  padding-top: 0.2rem;
   padding-right: 1.2rem;
   bottom: 1px;
   
@@ -163,16 +163,16 @@ body {
   padding: .5rem;
 }
 .song-info{
-  width: 280px;
+  width: 371px;
   height: 98px;
+  word-break: break-all;
 }
 .song-buttons{
-  width: 50%;
+  width: 36%;
   cursor: pointer;
 }
 .song-buttons .flex{
   gap: 10px;
-  margin-left: 28px;
   
 }
 .seekbar{
@@ -202,6 +202,9 @@ body {
 .close{
   display: none;
 }
+.song-name{
+  word-break: break-all;
+}
 /* #total-time{
   position: relative;
   left: 600px;
@@ -217,12 +220,12 @@ body {
     position: absolute;
     left: -200%;
     z-index: 1;
-    height: 78vh;
+    height: 89vh;
     width: 380px;
     transition: all 0.5s;
   }
   .left-section .bottom{
-    height: 58vh;
+    height: 77vh;
   }
   .right-section{
     width: 100vw;
@@ -249,8 +252,33 @@ body {
   .song-info{
     width: 148px;
   }
-  .song-buttons{
-    margin-left: 0px;
+  .cardContainer{
+    justify-content: center;
+    max-height: 68vh;
+    gap: 10px;
   }
+  .card{
+    width: 80vw;
+  }
+  .right-section{
+    height: 100vh;
+  }
+  .spotify-playlist{
+    height: 100vh;
+  }
+  .playbar{
+    position: absolute;
+  }
+  /* .buttons button{
+    display: none;
+  } */
+  .login-btn{
+    padding: 7px 18px;
+  }
+  .signup-btn{
+    padding: 8px 12px;
+  }
+
+  
 }
   
